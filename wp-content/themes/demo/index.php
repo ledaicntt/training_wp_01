@@ -15,7 +15,33 @@
                         <a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
                     </div>
                     <div class="navbar-collapse collapse ">
-                        <ul class="nav navbar-nav">
+                        <?php
+
+                        // wp_nav_menu( array(
+                        //     'theme_location' => 'my-custom-menu',
+                        //     'container_class' => 'custom-menu-class' ) );
+
+                           /**
+                            * Displays a navigation menu.
+                            *
+                            * @since 3.0.0
+                            */
+                            $defaults = array(
+                                'theme_location' => 'my-custom-menu',
+                                'menu' => '',
+                                'menu_class' => 'nav navbar-nav',
+                                'menu_id' => '',
+                                'echo' => true,
+                                'items_wrap' => '<ul id="%1$s" class="%2$s dailv">%3$s</ul>',
+                            );
+
+                            wp_nav_menu( $defaults );
+
+
+                        ?>
+
+
+                        <!-- <ul class="nav navbar-nav">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
@@ -28,7 +54,7 @@
                             <li><a href="portfolio.html">Portfolio</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>
@@ -321,4 +347,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
     <?php get_footer() ?>
+
+
 
